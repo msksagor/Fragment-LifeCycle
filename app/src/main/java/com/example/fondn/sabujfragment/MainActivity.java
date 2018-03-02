@@ -12,15 +12,13 @@ public class MainActivity extends AppCompatActivity implements Communicator {
 
     private Button three, four;
     FragmentManager fragmentManager;
-
     SenderFragment senderFragment;
-    //  ReceiverFragment receiverFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         senderFragment = new SenderFragment();
 
@@ -35,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements Communicator {
                 Toast.makeText(getApplicationContext(), "Sender Fragment", Toast.LENGTH_SHORT).show();
                 fragmentManager = getFragmentManager();
                 FragmentTransaction ft = fragmentManager.beginTransaction();
-                ft.replace(R.id.fragmentContainerID, senderFragment, "s");
+                ft.replace(R.id.fragmentContainerID, senderFragment);
                 ft.commit();
             }
         });
